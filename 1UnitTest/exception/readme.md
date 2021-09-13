@@ -1,3 +1,5 @@
-IDE: Visual Studio 19<br>
-lang: C#<br>
-Проект: Консольное приложение C#<br>
+<ul>
+  <li>IDE: Visual Studio 19</li>
+  <li>lang: C#</li>
+  <li>Проект: Консольное приложение C#</li>
+</ul>

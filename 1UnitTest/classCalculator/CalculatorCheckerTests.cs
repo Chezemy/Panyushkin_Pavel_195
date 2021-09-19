@@ -1,139 +1,79 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Calculator;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using calculator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator.Tests
+namespace calculator.Tests
 {
     [TestClass()]
     public class CalculatorCheckerTests
     {
-        //Test of +
+        [TestMethod()]
+        public void ValidateCalculatorTest_plus_ReturnTrue()
+        {
+            double a = 8;
+            double b = 15;
+            string operation = "+";
+            double result = 23;
+            double actual = CalculatorChecker.ValidateCalculator(a, b, operation);
+            Assert.AreEqual(result, actual);
 
-        [TestMethod()]
-        public void CheckAddition_ReturnsTrue()
-        {
-            // Arrange
-            double num1 = 4;
-            double num2 = 6;
-            double result = 10;
-            string operation = "+";
-            bool expected = true;
-            // Act
-            bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-            // Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod()]
-        public void CheckAddition_ReturnsFalse()
-        {
-            // Arrange
-            double num1 = 7;
-            double num2 = 5;
-            double result = 15;
-            string operation = "+";
-            bool expected = false;
-            // Act
-            bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-            // Assert
-            Assert.AreEqual(expected, actual);
         }
 
-        //Test of "-"
 
-        [TestMethod()]
-        public void CheckSubtraction_ReturnsTrue()
+        [TestMethod]
+        public void ValidateCalculatorTest_Minus_ReturnTrue()
         {
-            // Arrange
-            double num1 = 53;
-            double num2 = 8;
+            double a = 51;
+            double b = 6;
+            string operation = "-";
             double result = 45;
-            string operation = "-";
-            bool expected = true;
-            // Act
-            bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-            // Assert
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod()]
-        public void CheckSubtraction_ReturnsFalse()
-        {
-            // Arrange
-            double num1 = 25;
-            double num2 = 15;
-            double result = 11;
-            string operation = "-";
-            bool expected = false;
-            // Act
-            bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-            // Assert
-            Assert.AreEqual(expected, actual);
+            double actual = CalculatorChecker.ValidateCalculator(a, b, operation);
+            Assert.AreEqual(result, actual);
         }
 
-        // Test of "*"
+        [TestMethod]
+        public void ValidateCalculatorTest_multiply_ReturnTrue()
+        {
+            double a = 25;
+            double b = 5;
+            string operation = "*";
+            double result = 125;
+
+            double actual = CalculatorChecker.ValidateCalculator(a, b, operation);
+            Assert.AreEqual(result, actual);
+        }
+
+        [TestMethod]
+        public void ValidateCalculatorTest_divide_ReturnTrue()
+        {
+            double a = 7.5;
+            double b = 3;
+            string operation = "/";
+            double result = 2.5;
+
+            double actual = CalculatorChecker.ValidateCalculator(a, b, operation);
+            Assert.AreEqual(result, actual);
+        }
 
         [TestMethod()]
-        public void CheckMultiply_ReturnsTrue()
+        [ExpectedException(typeof(DivideByZeroException), "Вы не можете делить на ноль ")]
+        public void ValidateCalculatorTest_divide_ReturnFalse()
         {
-                // Arrange
-                double num1 = 5;
-                double num2 = 8;
-                double result = 40;
-                string operation = "*";
-                bool expected = true;
-                // Act
-                bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-                // Assert
-                Assert.AreEqual(expected, actual);
-        }
-        [TestMethod()]
-        public void CheckMultiply_ReturnsFalse()
-        {
-                // Arrange
-                double num1 = 7;
-                double num2 = 3;
-                double result = 15;
-                string operation = "*";
-                bool expected = false;
-                // Act
-                bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-                // Assert
-                Assert.AreEqual(expected, actual);
+            double a = 1;
+            double b = 0;
+
+
+            string operation = "/";
+            double actual = CalculatorChecker.ValidateCalculator(a, b, operation);
+
         }
 
 
-        //Test of "/"
 
-        [TestMethod()]
-        public void CheckDivide_ReturnsTrue()
-        {
-                // Arrange
-                double num1 = 60;
-                double num2 = 2;
-                double result = 30;
-                string operation = "/";
-                bool expected = true;
-                // Act
-                bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-                // Assert
-                Assert.AreEqual(expected, actual);
-        }
-        [TestMethod()]
-        public void CheckDivide_ReturnsFalse()
-        {
-            // Arrange
-            double num1 = 75;
-            double num2 = 5;
-            double result = 30;
-            string operation = "+";
-            bool expected = false;
-            // Act
-            bool actual = CalculatorChecker.validateOperation(num1, num2, operation, result);
-            // Assert
-            Assert.AreEqual(expected, actual);
-        }
+
     }
 }

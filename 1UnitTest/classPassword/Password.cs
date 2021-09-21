@@ -6,22 +6,18 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ClassLibraryPassword
 {
-    public partial class UserControl1: UserControl
+    public class PasswordChecker
     {
-        public UserControl1()
+        static void Main(string[] args)
         {
-            InitializeComponent();
-        }
-    }
+           Console.WriteLine(validatePassword("qwertY123"));
 
-        public class PasswordChecker
+        } 
+        public static bool validatePassword(string password)
         {
-            public static bool validatePassword(string password)
-            {
             if (password.Length < 8 || password.Length > 20)
                 return false;
 
@@ -39,9 +35,9 @@ namespace ClassLibraryPassword
 
 
             return true;
-            }
-        
-
         }
+
+
+    }
 
 }

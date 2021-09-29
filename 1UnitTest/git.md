@@ -78,5 +78,5 @@ master — это активная ветка, она помечена звез�
   <b>$ git branch -d awesome_new_feature</b><br>  
   
   
-$git status
-$git push https://(Username):(Token)@github.com/(Username)/(RepositoryName).git
+$git status<br>
+$git push https://(Username):(Token)@github.com/(Username)/(RepositoryName).git<br>

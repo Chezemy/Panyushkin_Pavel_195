@@ -77,8 +77,9 @@ master — это активная ветка, она помечена звез�
 Теперь ветка master актуальна. Ветка amazing_new_feature больше не нужна, и ее можно удалить.<br>
   <b>$ git branch -d awesome_new_feature</b><br><br><br>  
   
-$git init<br>  
-$git status<br>
-$git add<br>
-git remote add origin https://github.com/(Username)/(RepositoryName).git
-$git push https://(Username):(Token)@github.com/(Username)/(RepositoryName).git<br>
+    <b>$git init</b>  -  Инициализация репозитория
+    <b>$git status</b>  -  Узнать изменения в репозитории
+    <b>$git add</b>  -  Добавление в индекс всех файлов, в которых были изменения, а также новые файлы
+    <b>$git commit -m "first commit"</b>  -  совершение коммита(сохранение изменений)
+    <b>$git remote add origin https://github.com/(Username)/(RepositoryName).git</b>  -  Подключение к удаленному репозиторию
+    <b>$git push https://(Username):(Token)@github.com/(Username)/(RepositoryName).git</b>  -  Отправка локальной ветки в удаленный репозиторий

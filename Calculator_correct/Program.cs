@@ -46,7 +46,7 @@ namespace calculator
                 catch (DivideByZeroException e) //отлов исключения
                 {
                     Console.WriteLine($"Ошибка: {e.Message}");
-                    return 1;
+                    return 404;
                 }
 
 

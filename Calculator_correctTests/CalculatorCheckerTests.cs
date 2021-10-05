@@ -23,7 +23,9 @@ namespace calculator.Tests
 
         }
 
-
+        /// <summary>
+        /// //
+        /// </summary>
         [TestMethod]
         public void ValidateCalculatorTest_Minus_ReturnTrue()
         {
@@ -81,7 +83,7 @@ namespace calculator.Tests
                 double b = 0;
 
                 string operation = "/";
-                double res = 1;
+                double res = 404;
                 double actual = CalculatorChecker.ValidateCalculator(a, b, operation);
 
                 Assert.AreEqual(actual,res);

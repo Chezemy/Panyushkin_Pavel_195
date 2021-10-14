@@ -13,10 +13,10 @@
         <div id="logo"></div>
         <div id="companyName">Brand</div>
         <div id="navWrap">
-            <a href="/">
+            <a href="#">
                 Главная
             </a>
-            <a href="index.php?page=shop">
+            <a href="#">
                 Магазин
             </a>
         </div>
@@ -26,48 +26,11 @@
 <div id="content">
 
     <?php
-    $goods = [
-        [
-            'id' => 1,
-            'name' => 'Iphone',
-            'desc' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium',
-            'img' => '/images/goods/iphone.jpg',
-            'price' => '2000 $'
-        ],
-        [
-            'id' => 2,
-            'name' => 'HTC',
-            'desc' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium',
-            'img' => '/images/goods/htc.jpg',
-            'price' => '1200 $'
-        ],
-        [
-            'id' => 3,
-            'name' => 'Samsung',
-            'desc' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium',
-            'img' => '/images/goods/samsung.jpg',
-            'price' => '1400 $'
-        ],
-    ];
-
-    $page = $_GET['page'];
-
-    if (!isset($page)) {
-        require('templates/main.php');
-    } elseif ($page == 'shop') {
-        require('templates/shop.php');
-    } elseif ($page == 'product') {
-        $id = $_GET['id'];
-        $good = [];
-        foreach ($goods as $product) {
-            if ($product['id'] == $id) {
-                $good = $product;
-                break;
-            }
-        }
-        require('templates/openedProduct.php');
-    }
-?>
+        $a = 5;
+        $b = 3;
+        $c = $a + $b == 8;
+        var_dump($c);
+    ?>
 
 </div>
 
@@ -90,8 +53,8 @@
         </div>
 
         <div id="footerNav">
-            <a href="/">Главная</a>
-            <a href="index.php?page=shop">Магазин</a>
+            <a href="#">Главная</a>
+            <a href="#">Магазин</a>
         </div>
 
         <div id="social">

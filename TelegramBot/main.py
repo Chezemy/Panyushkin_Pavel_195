@@ -1,13 +1,13 @@
 import telebot
 from telebot import types   # подключение библиотек
-bot = telebot.TeleBot("2067229525:AAF8wEI6kRNRLdfR44YvG2xTJ1dWzMaJRew"); # подключение к боту с помощью токена
+bot = telebot.TeleBot("2067229525:AAFo0m6CCcSh77Wd2tQ48S194bUzdp4xHaY"); # подключение к боту с помощью токена
 
 @bot.message_handler(content_types=['text', 'document', 'audio'])
 def get_text_messages(message):
   if message.text == "Привет":
     bot.send_message(message.from_user.id, "Привет, чем я могу тебе помочь?")
   elif message.text == "/help":
-    bot.send_message(message.from_user.id, "Напиши привет")
+    bot.send_message(message.from_user.id, "Тут должен быть список команд, но пока его нет ):")
   else:
     bot.send_message(message.from_user.id, "Я тебя не понимаю. Напиши /help.")
     
@@ -28,7 +28,7 @@ def get_name(message): #получаем фамилию
     global name;
     name = message.text;
     bot.send_message(message.from_user.id, 'Какая у тебя фамилия?');
-    bot.register_next_step_handler(message, get_surnme);
+    bot.register_next_step_handler(message, get_surname);
 
 def get_surname(message):
     global surname;

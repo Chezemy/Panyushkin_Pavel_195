@@ -2,10 +2,10 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> // подключены все необходимые библиотеки
 
 using namespace cv;
-using namespace std;
+using namespace std; // подключены пространства имён
 
 Mat img;
 Mat src_gray;
@@ -14,13 +14,13 @@ Mat src_gray;
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	char filename[80]; //
+	char filename[80]; 
 	cout << "Введите имя файла, в который хотите внести изменения, и нажмите Enter" << endl;
-	cin.getline(filename, 80);
+	cin.getline(filename, 80); // получение названия файла от пользователя с помошью ввода
 	cout << "Открыт файл";
 	cout << filename << endl;
 
-	Mat img = imread(filename, 1);
+	Mat img = imread(filename, 1); // открытие необходимого изображения
 	namedWindow("Исходное изображение", WINDOW_AUTOSIZE);
 	imshow("Исходное изображение", img);
 

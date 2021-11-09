@@ -4,29 +4,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-#include <iostream> // подключены все необходимые библиотеки
+#include <iostream>
 using namespace cv;
-using namespace std; // подключены пространства имён
+using namespace std;
 
 Mat img;
 
 
-int main()	
+int main()
 {
 	setlocale(LC_ALL, "Russian");
 	char filename[80];
-	cout << "Введите название файла и нажмите enter" << endl;
-	cout << "file.jpg" << endl;
-	cout << "sf.jpg" << endl;
-	cout << "sf2.jpg" << endl;
-	cout << "road.png" << endl;
+	cout << "Enter file name" << endl;
+	cout << "Obama.jpg" << endl;
+	cout << "Putin.jpg" << endl;
+	cout << "Rock.jpg" << endl;
 
 	cin.getline(filename, 80);
-	cout << "Открыть файл: ";
+	cout << "Open file: ";
 	cout << filename << endl;
 
 	Mat img = imread(filename, 1);
-	const char* source_window =  filename;
+	const char* source_window = filename;
 
 	namedWindow(source_window, WINDOW_GUI_EXPANDED);
 	imshow(source_window, img);
@@ -45,8 +44,8 @@ int main()
 	cout << otsu_tresh_val;
 	Canny(src_gray, canny_output, lower_tresh_val, high_tresh_val, 3);
 
-	string source_grey_window = "Серое изображение";
-	namedWindow(source_grey_window, WINDOW_GUI_EXPANDED); 
+	string source_grey_window = "abc";
+	namedWindow(source_grey_window, WINDOW_GUI_EXPANDED);
 	imshow(source_grey_window, canny_output);
 	imwrite("canny_output.jpg", canny_output);
 

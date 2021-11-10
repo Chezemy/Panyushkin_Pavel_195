@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 # define M_PIl 3.141592653589793238462643383279502884L
+//#pragma warning(default:4716)
 
 using namespace cv;
 using namespace std;
@@ -24,7 +25,10 @@ string input()
 	cout << "Rock.jpg" << endl;
 
 
+	//cin.getline(filename, 80);
 	cin >> filename;
+	//string path = "/x64/Debug/";
+	//string filename = path + filename1;
 	cout << "\nОткрыть файл: ";
 	cout << filename << endl;
 
@@ -121,7 +125,7 @@ string Image()
 	return 0;
 }
 
-string Video()
+string  Video()
 {
 	string file = inputVid();
 	VideoCapture cap(file);
